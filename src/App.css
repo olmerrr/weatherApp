@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+}
+
+body {
+  font-size: 2rem;
+  height: 100vh;
+  color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://img.freepik.com/free-photo/inspiring-view-of-morning-light_23-2148851773.jpg?w=740&t=st=1709543704~exp=1709544304~hmac=f8db10f593760f6262a6a00be3abe1b7745283f18124df86ac4aef6a670d7d15");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 112rem;
+  gap: 4rem;
+  padding: 6rem 0;
+}
+
+h1 {
+  font-weight: 400;
+  font-size: 6rem;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  text-align: center;
+  color: #f2f2f2;
+}
+
+.weather__title {
+  font-size: 2.8rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 2.4rem;
+  color: #f2f2f2;
+}
+
+.weather {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.day {
+  background-color: #d1d1d1;
+  padding: 1.6rem 0 2rem;
+  width: 12.8rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  cursor: pointer;
+}
+
+.day span {
+  font-size: 5.2rem;
+}
+
+.day.important {
+  background-color: #ecc5c0;
+  outline: 2px solid #222;
+}
+
+
+.location {
+  margin-right: 20px;
+  width: 380px;
+  border-radius: 2px;
+  font-size: 2rem;
+  color: #656464;
+  border: none;
+  padding: 6px 8px;
+  height: 35px;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.btn {
+  border-radius: 4px;
+  color: #fff;
+  font-family: inherit;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #1e1b17;
+  padding: 6px 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 60px;
+}
+
+.btn-big {
+  width: 200px;
+}
+
+.search-form {
+  margin: 28px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f2f2f2;
+}
+
+@media screen and (max-width: 1120px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .search-form {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .location {
+    width: 90%;
+  }
+
+  .search-form {
+    margin: 16px;
+  }
+
+  .loader {
+    display: none;
+  }
+
+  .day {
+    padding: 1rem 2rem;
+    width: 10.8rem;
+    gap: 1rem;
+  }
+
+  .weather {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
